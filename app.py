@@ -14,8 +14,8 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    cats = mongo.db.categories.find()
-    return render_template("base.html", categories=cats)
+    topics = mongo.db.categories.find()
+    return render_template("base.html", category_list=topics)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

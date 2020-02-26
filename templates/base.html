@@ -58,13 +58,12 @@
 
 <div class="container">
     <div class="row">
-          
-              {% for elem in categories.categories %}
-                <div class="col">
-                    <h4>{{elem}}</h4><br>{{categories.categories}}
-                </div>    
+          <select name="category" method = "GET" action="\">
+              {% for elem in category_list %}
+                <option value="{{elem.category}}" selected>{{elem.category}}</option>
+               
               {% endfor %}
-           
+          </select> 
      
     </div>
 </div>
