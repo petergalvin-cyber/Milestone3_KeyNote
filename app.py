@@ -7,14 +7,15 @@ if path.exists("env.py"):
     import env
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'task_manager'
+app.config["MONGO_DBNAME"] = 'SpeakerHub'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    return render_template("base.html")
+    cats = mongo.db.categories.find()
+    return render_template("base.html", categories=cats)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
