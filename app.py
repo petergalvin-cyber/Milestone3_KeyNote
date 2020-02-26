@@ -17,6 +17,14 @@ def index():
     topics = mongo.db.categories.find()
     return render_template("base.html", category_list=topics)
 
+
+@app.route('/findspeaker', methods=['GET'])
+def findspeaker():
+    print("dfgrghg")
+    speakers = mongo.db.speakers.find({"category": request.form.get('category')})    
+    return render_template("dud.html")
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

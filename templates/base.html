@@ -61,13 +61,14 @@
         <div class="col-12">
         <br><br>
         <p> dfdfsjgfcsdjgsakjgfkksdjfhgsdkjfgsghjhgfsdfg</p><br>
-          <form>  
-          <select name="category" method = "GET" class="form-control form-control-lg" action="\">
+          <form action="{{url_for('findspeaker')}}" method="GET">  
+          <select name="category" id="category" class="form-control form-control-lg" >
               {% for elem in category_list %}
-                <option value="{{elem.category}}" selected>{{elem.category}}</option>
+                <option value="{{elem.category}}">{{elem.category}}</option>
                
               {% endfor %}
           </select> 
+          <input type="submit" value="Submit">
           </form>
             <br><br>
         </div>
