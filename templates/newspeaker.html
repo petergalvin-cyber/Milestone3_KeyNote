@@ -1,10 +1,10 @@
 {% extends 'base.html' %} {% block content %}
-
+<br>
 <div class="row">
-    <form action="{{ url_for('add_speaker') }}" method="POST"  class="col s12">
+    <form action="{{url_for('add_speaker')}}" method="POST"  class="col s12">
             <div class="form-group">
                     
-                    <select id="category" name="category_name" class="form-control form-control-lg">
+                    <select id="category" name="category" class="form-control form-control-lg">
                         <option value="" disabled selected>Choose Category</option>
                         {% for cat in categories %}
                             <option value="{{cat.category}}">{{cat.category}}</option>
@@ -20,8 +20,8 @@
             </div>
         
             <div class="form-group">
-                <textarea name="task_description" id="task_description" class="form-control form-control-lg"></textarea>
-                <label for="task_description">Task Description</label>
+                <textarea name="bio" id="bio" class="form-control form-control-lg"></textarea>
+                <label for="bio">Biography</label>
             </div>
 
             <div class="form-group">
@@ -35,7 +35,7 @@
             </div>
 
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Add Task
+            <button class="btn btn-primary" type="submit" name="action">Add Task
                 <i class="fab fa-facebook-f"></i>
              </button>
         </div>
