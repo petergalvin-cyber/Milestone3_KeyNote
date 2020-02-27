@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>fasdfgasdafsd</h1>
+   {% for person in speakers %}
+    <h1>{{person.bio}}</h1>
+   {% endfor %} 
 </body>
 </html>

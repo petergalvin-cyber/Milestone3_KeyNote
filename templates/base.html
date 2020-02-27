@@ -61,7 +61,7 @@
         <div class="col-12">
         <br><br>
         <p> dfdfsjgfcsdjgsakjgfkksdjfhgsdkjfgsghjhgfsdfg</p><br>
-          <form action="{{url_for('findspeaker')}}" method="GET">  
+          <form action="{{url_for('findspeaker')}}" method="POST">  
           <select name="category" id="category" class="form-control form-control-lg" >
               {% for elem in category_list %}
                 <option value="{{elem.category}}">{{elem.category}}</option>

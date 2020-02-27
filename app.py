@@ -18,11 +18,10 @@ def index():
     return render_template("base.html", category_list=topics)
 
 
-@app.route('/findspeaker', methods=['GET'])
+@app.route('/findspeaker', methods=['POST'])
 def findspeaker():
-    print("dfgrghg")
     speakers = mongo.db.speakers.find({"category": request.form.get('category')})    
-    return render_template("dud.html")
+    return render_template("dud.html", speakers=speakers)
 
 
 if __name__ == '__main__':
