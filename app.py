@@ -15,7 +15,7 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     topics = mongo.db.categories.find()
-    return render_template("base.html", category_list=topics)
+    return render_template("index.html", category_list=topics)
 
 
 @app.route('/findspeaker', methods=['POST'])
