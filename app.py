@@ -25,11 +25,11 @@ def findspeaker():
     #print(speakers.count())
     return render_template("speaker_list.html", speakers=speakers)
 
+
 @app.route('/speakerbio/<speaker_id>')
 def speakerbio(speaker_id):
     speaker_info = mongo.db.speakers.find({'_id': ObjectId(speaker_id)}) 
     return render_template("speaker_bio.html", speaker_info=speaker_info)
-
 
 
 

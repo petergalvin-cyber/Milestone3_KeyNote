@@ -124,3 +124,8 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
+.image-float {
+    float: left;
+    margin-right: 1em;
+}
