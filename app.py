@@ -22,8 +22,8 @@ def index():
 @app.route('/findspeaker', methods=['POST', 'GET'])
 def findspeaker():
     speakers = mongo.db.speakers.find({"category": request.form.get('category')})    
-    print(speakers.count())
-    return render_template("speaker_list.html", speakers=speakers)
+    #print(speakers.count())
+    return render_template("speaker_list.html", speakers=speakers, category=request.form.get('category'))
 
 
 @app.route('/speakerbio/<speaker_id>')
@@ -41,6 +41,12 @@ def new_speaker():
 @app.route('/add_speaker', methods=['POST'])
 def add_speaker():
     mongo.db.speakers.insert_one(request.form.to_dict())
+    return redirect(url_for('index'))
+
+
+@app.route('/deletespeaker/<speaker_id>')
+def deletespeaker(speaker_id):
+    mongo.db.speakers.remove({'_id': ObjectId(speaker_id)})
     return redirect(url_for('index'))
 
 

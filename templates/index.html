@@ -3,6 +3,11 @@
 <section class="showcase">
     <div class="container-fluid p-0">
       <div class="row">
+            <div class="col text-center m-3">
+            <h1>Select Speakers by listed Categories, we welcome feedback on your Speaker experience.</h1>
+            </div>
+      </div>
+      <div class="row">
         <!--
         <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/img/Keynote_address.jpg');"></div>
         -->
@@ -11,23 +16,25 @@
             <form action="{{url_for('findspeaker')}}" method="POST">  
                 <div class="form-group">  
                     <select name="category" id="category" class="form-control form-control-lg" >
+
+                            <option value="" disabled selected>Select Category</option>
                         {% for elem in categories %}
-                        
+                           
                             <option value="{{elem.category}}">{{elem.category}}</option>
-                    
+                           
                         {% endfor %}
                     </select> 
                 </div> 
-                <input type="submit" value="Speaker List" class="btn btn-primary">
+                <input type="submit" value="Compile Speaker List" class="btn btn-primary btn-lg">
             </form>
         </div>
         <div class="col-lg-6 order-lg-1 my-auto">
-          <h2>Review our list of Speakers to select the most suitable, gives us feedback on your Speaker experience.</h2>
+          <h2>Why use a KeyNote Speaker?</h2>
           <p class="lead mb-0">Get the best out your workforce with one of our leadership and peak performance speakers. Experts in their field, our leadership speakers have enjoyed success in their fields and are renowned for providing engaging and insightful talks on the subjects of leadership and peak performance. Leadership speakers focus on how to evolve and grow from being a boss into the leader. Running a business is about more than sheer passion and determination. <br>
           
           Through the topics that are covered, any audience will walk away with a new perspective on what it means to lead. Within this comes the subject of peak performance; a topic which can cover many different walks of life. From business to exploration and sport, we have peak performance speakers who have incredible stories to tell about how they maintained performance and the results that came from doing so. <br>
           
-          To assist you in getting more out of your staff or your own personal performance, review our speaker listing to select the most appropriate Speaker. We also give you the opportunity to supply Speaker feedback. After all, its all about performance.</p>
+          To assist you in getting more out of your staff or your own personal performance, review our speaker listing to select the most appropriate candidate. We also give you the opportunity to supply Speaker feedback. After all, its all about performance.</p>
         </div>
       </div>
       
