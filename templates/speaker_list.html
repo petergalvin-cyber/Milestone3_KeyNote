@@ -6,17 +6,22 @@
         <div class="col-sm-6 col-lg-4 mb-3">
             <div class="card mb-0 h-100">
                
-                    <img class="card-img-top" src="{{person.photo}}" alt="Card image">
-                    <div class="card-body">
-                        <h6 class="card-title">{{person.name}}</h6>
-                        <p class="card-text">{{person.banner}}</p>
-                        <a href="{{url_for('speakerbio',speaker_id=person._id)}}" class="btn btn-primary stretched-link">See Biography</a>
-                    </div>
+                <img class="card-img-top" src="{{person.photo}}" alt="Card image">
+                <div class="card-body">
+                    <h6 class="card-title">{{person.name}}</h6>
+                    <p class="card-text">{{person.banner}}</p>
+                    <a href="{{url_for('speakerbio',speaker_id=person._id)}}" class="btn btn-primary stretched-link">See Biography</a>
+                </div>
                 
             </div>
         </div>
          {% endfor %}
     </div>
+
+    <div class="row">
+     <a href="#" ></a>
+    </div>
+
    <!--
    {% for person in speakers %}
     <h1>{{person.bio}}</h1>
