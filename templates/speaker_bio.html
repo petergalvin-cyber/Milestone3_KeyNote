@@ -15,7 +15,10 @@
         {{item.bio}}
     </div>
     
-    {% endfor %}
 </div>
 
+<div class="row"> 
+        <a href="{{url_for('deletespeaker',speaker_id=item._id)}}" class="btn btn-primary">Delete Speaker</a>
+</div>
+{% endfor %}
 {% endblock %}
