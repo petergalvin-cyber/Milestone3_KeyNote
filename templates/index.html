@@ -1,35 +1,27 @@
- 
 {% extends 'base.html' %} {% block content %}
-
-<section class = "showcase">
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-        <br><br>
-        <p> dfdfsjgfcsdjgsakjgfkksdjfhgsdkjfgsghjhgfsdfg</p><br>
-          <form action="{{url_for('findspeaker')}}" method="POST">  
-          <select name="category" id="category" class="form-control form-control-lg" >
-              {% for elem in category_list %}
-                <option value="{{elem.category}}">{{elem.category}}</option>
-               
-              {% endfor %}
-          </select> 
-          <input type="submit" value="Submit">
-          </form>
-            <br><br>
-        </div>
-    </div>
-</div>
-</section>
-
-  
-
-  <section class="showcase">
+ 
+<section class="showcase">
     <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
+      <div class="row">
+        <!--
         <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/img/Keynote_address.jpg');"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+        -->
+        <div class="col-lg-6 order-lg-2 my-auto">
+                    
+            <form action="{{url_for('findspeaker')}}" method="POST">  
+                <div class="form-group">  
+                    <select name="category" id="category" class="form-control form-control-lg" >
+                        {% for elem in categories %}
+                        
+                            <option value="{{elem.category}}">{{elem.category}}</option>
+                    
+                        {% endfor %}
+                    </select> 
+                </div> 
+                <input type="submit" value="Speaker List" class="btn btn-primary">
+            </form>
+        </div>
+        <div class="col-lg-6 order-lg-1 my-auto">
           <h2>Review our list of Speakers to select the most suitable, gives us feedback on your Speaker experience.</h2>
           <p class="lead mb-0">Get the best out your workforce with one of our leadership and peak performance speakers. Experts in their field, our leadership speakers have enjoyed success in their fields and are renowned for providing engaging and insightful talks on the subjects of leadership and peak performance. Leadership speakers focus on how to evolve and grow from being a boss into the leader. Running a business is about more than sheer passion and determination. <br>
           
@@ -40,7 +32,7 @@
       </div>
       
     </div>
-  </section>
+</section>
 
   <!-- Testimonials -->
   <section class="testimonials text-center bg-light">

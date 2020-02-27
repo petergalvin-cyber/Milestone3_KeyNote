@@ -15,13 +15,22 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     topics = mongo.db.categories.find()
-    return render_template("index.html", category_list=topics)
+    #print(topics.count())
+    return render_template("index.html", categories=topics)
 
 
 @app.route('/findspeaker', methods=['POST'])
 def findspeaker():
     speakers = mongo.db.speakers.find({"category": request.form.get('category')})    
-    return render_template("dud.html", speakers=speakers)
+    #print(speakers.count())
+    return render_template("speaker_list.html", speakers=speakers)
+
+@app.route('/speakerbio/<speaker_id>')
+def speakerbio(speaker_id):
+    speaker_info = mongo.db.speakers.find({'_id': ObjectId(speaker_id)}) 
+    return render_template("speaker_bio.html", speaker_info=speaker_info)
+
+
 
 
 if __name__ == '__main__':
