@@ -1,7 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-
+        <br>
+        <h2>Speakers specialising in {{category}}</h2>
+        <br>
     <div class="row">
+        
         {% for person in speakers %}
         <div class="col-sm-6 col-lg-4 mb-3">
             <div class="card mb-0 h-100">
