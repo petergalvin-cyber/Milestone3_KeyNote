@@ -11,24 +11,22 @@
         <!--
         <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/img/Keynote_address.jpg');"></div>
         -->
-        <div class="col-lg-6 order-lg-2 my-auto">
+        <div class="col-lg-4 order-lg-2 my-auto d-flex justify-content-center">
                     
             <form action="{{url_for('findspeaker')}}" method="POST">  
-                <div class="form-group">  
-                    <select name="category" id="category" class="form-control form-control-lg" >
-
-                            <option value="" disabled selected>Select Category</option>
-                        {% for elem in categories %}
-                           
-                            <option value="{{elem.category}}">{{elem.category}}</option>
-                           
-                        {% endfor %}
-                    </select> 
-                </div> 
+                 <h2>Please select your Speaker's specialities</h2>
+                 {% for elem in categories %}
+                <div class="form-check">  
+                    <input type="checkbox" style="margin-right: 1em" name="category" value = "{{elem.category}}" id="category">
+                    <label class="form-check-label" for="category">{{elem.category}}</label>    
+                </div> <br> 
+                {% endfor %}
+                    
+                 
                 <input type="submit" value="Compile Speaker List" class="btn btn-primary btn-lg">
             </form>
         </div>
-        <div class="col-lg-6 order-lg-1 my-auto">
+        <div class="col-lg-8 order-lg-1 my-auto">
           <h2>Why use a KeyNote Speaker?</h2>
           <p class="lead mb-0">Get the best out your workforce with one of our leadership and peak performance speakers. Experts in their field, our leadership speakers have enjoyed success in their fields and are renowned for providing engaging and insightful talks on the subjects of leadership and peak performance. Leadership speakers focus on how to evolve and grow from being a boss into the leader. Running a business is about more than sheer passion and determination. <br>
           

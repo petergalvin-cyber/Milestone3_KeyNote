@@ -21,8 +21,11 @@ def index():
 
 @app.route('/findspeaker', methods=['POST', 'GET'])
 def findspeaker():
-    speakers = mongo.db.speakers.find({"category": request.form.get('category')})    
-    #print(speakers.count())
+    play = request.form.getlist('category')
+    print(play)
+    speakers = mongo.db.speakers.find({"category": {'$in': request.form.getlist('category')}})    
+    print(speakers.count())
+    
     return render_template("speaker_list.html", speakers=speakers, category=request.form.get('category'))
 
 
