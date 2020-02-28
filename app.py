@@ -55,14 +55,14 @@ def deletespeaker(speaker_id):
 
 @app.route('/editspeaker/<speaker_id>')
 def editspeaker(speaker_id):
-    speaker_info = mongo.db.speakers.find({'_id': ObjectId(speaker_id)})
+    speaker_info = mongo.db.speakers.find_one({'_id': ObjectId(speaker_id)})
     topics = mongo.db.categories.find() 
     return render_template('editspeaker.html', speaker=speaker_info, categories=topics)
 
 
-@app.route('updatespeaker/<speaker_id>')
+@app.route('/updatespeaker/<speaker_id>')
 def updatespeaker(speaker_id):
-    mongo.db.speakers.update({'_id': ObjectId(speaker_id)}),
+    mongo.db.speakers.update({'_id': ObjectId(speaker_id)},
     {
         'name': request.form.get('name'),
         'category': request.form.getlist('category'),
