@@ -21,12 +21,12 @@ def index():
 
 @app.route('/findspeaker', methods=['POST', 'GET'])
 def findspeaker():
-    play = request.form.getlist('category')
-    print(play)
-    speakers = mongo.db.speakers.find({"category": {'$in': request.form.getlist('category')}})    
-    print(speakers.count())
     
-    return render_template("speaker_list.html", speakers=speakers, category=request.form.get('category'))
+    speakers = mongo.db.speakers.find({"category": {'$in': request.form.getlist('category')}})    
+    print_list = ' and '.join(request.form.getlist('category'))
+    print_list = print_list+"."
+    
+    return render_template("speaker_list.html", speakers=speakers, category=print_list)
 
 
 @app.route('/speakerbio/<speaker_id>')
@@ -50,6 +50,26 @@ def add_speaker():
 @app.route('/deletespeaker/<speaker_id>')
 def deletespeaker(speaker_id):
     mongo.db.speakers.remove({'_id': ObjectId(speaker_id)})
+    return redirect(url_for('index'))
+
+
+@app.route('/editspeaker/<speaker_id>')
+def editspeaker(speaker_id):
+    speaker_info = mongo.db.speakers.find({'_id': ObjectId(speaker_id)})
+    topics = mongo.db.categories.find() 
+    return render_template('editspeaker.html', speaker=speaker_info, categories=topics)
+
+
+@app.route('updatespeaker/<speaker_id>')
+def updatespeaker(speaker_id):
+    mongo.db.speakers.update({'_id': ObjectId(speaker_id)}),
+    {
+        'name': request.form.get('name'),
+        'category': request.form.getlist('category'),
+        'bio': request.form.get('bio'),
+        'banner': request.form.get('banner'),
+        'photo': request.form.get('photo')
+    })
     return redirect(url_for('index'))
 
 
