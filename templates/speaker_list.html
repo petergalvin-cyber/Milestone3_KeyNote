@@ -6,7 +6,7 @@
 
     <div class="row">
         {% for person in speakers %}
-        <div class="col-sm-6 col-lg-4 mb-3">
+        <div class="col-sm-6 col-lg-3 mb-3">
             <div class="card mb-0 h-100">
                
                 <img class="card-img-top" src="{{person.photo}}" alt="Card image">
@@ -21,13 +21,6 @@
          {% endfor %}
     </div>
 
-    <div class="row">
-         <div class="col"></div> 
-         <div class="col-4">
-                <a class="btn btn-primary btn-lg btn-block m-5" href="{{url_for('new_speaker')}}" >Add Speaker</a>
-         </div>
-         <div class="col"></div> 
-    </div>
 
    
 {% endblock %}

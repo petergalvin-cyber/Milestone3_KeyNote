@@ -11,22 +11,22 @@
         <!--
         <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/img/Keynote_address.jpg');"></div>
         -->
-        <div class="col-lg-4 order-lg-2 my-auto">
+        <div class="col-lg-5 order-lg-2 my-auto d-flex justify-content-center">
                     
             <form action="{{url_for('findspeaker')}}" method="POST">  
                  <h2>Please select your Speaker's specialities</h2>
                  {% for elem in categories %}
                 <div class="form-check">  
                     <input type="checkbox" style="margin-right: 1em" name="category" value = "{{elem.category}}" id="category">
-                    <label class="form-check-label" for="category"><h5>{{elem.category}}</h5></label>    
+                    <label class="form-check-label" for="category"><h5 class="font-weight-normal">{{elem.category}}</h5></label>    
                 </div> 
                 {% endfor %}
                      
-                <input type="submit" value="Compile Speaker List" class="btn btn-primary btn-lg">
-            </form>
+                <input type="submit" value="Compile Speaker List" class="btn btn-primary btn-lg m-3">
+            </form>   
         </div>
         
-        <div class="col-lg-8 order-lg-1">
+        <div class="col-lg-7 order-lg-1">
           <h2 class="mb-3">Why use a KeyNote Speaker?</h2>
           <p class="lead mb-0">Get the best out your workforce with one of our leadership and peak performance speakers. Experts in their field, our leadership speakers have enjoyed success in their fields and are renowned for providing engaging and insightful talks on the subjects of leadership and peak performance. Leadership speakers focus on how to evolve and grow from being a boss into the leader. Running a business is about more than sheer passion and determination. <br>
           
@@ -35,7 +35,13 @@
           To assist you in getting more out of your staff or your own personal performance, review our speaker listing to select the most appropriate candidate. We also give you the opportunity to supply Speaker feedback. After all, its all about performance.</p>
         </div>
       </div>
-      
+
+      <div class="row">
+        <div class="col-lg-5 offset-lg-7 my-auto d-flex justify-content-center">
+            <a class="btn btn-primary btn-lg btn-block m-5" href="{{url_for('new_speaker')}}" >Add Speaker</a>
+        </div>    
+      </div>
+
     </div>
 </section>
 

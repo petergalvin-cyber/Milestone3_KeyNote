@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
  
 {% for item in speaker_info %}
-<br>
+
 
 <div class="row">   
     <div class="col">
@@ -23,7 +23,7 @@
         <a href="{{url_for('editspeaker',speaker_id=item._id)}}" class="btn btn-primary btn-lg btn-block m-5">Edit Speaker Details</a>
     </div>
     <div class="col-2">
-        <a href="{{url_for('deletespeaker',speaker_id=item._id)}}" class="btn btn-danger btn-lg btn-block m-5">Delete Speaker</a>
+        <a href="{{url_for('deletespeaker',speaker_id=item._id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-lg btn-block m-5">Delete Speaker</a>
     </div>
     <div class="col"></div>    
 </div>
