@@ -11,7 +11,7 @@
         <!--
         <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/img/Keynote_address.jpg');"></div>
         -->
-        <div class="col-lg-5 order-lg-2 my-auto d-flex justify-content-center">
+        <div class="col-lg-5 order-lg-2 my-auto d-flex flex-column justify-content-center">
                     
             <form action="{{url_for('findspeaker')}}" method="POST">  
                  <h2>Please select your Speaker's specialities</h2>
@@ -23,7 +23,8 @@
                 {% endfor %}
                      
                 <input type="submit" value="Compile Speaker List" class="btn btn-primary btn-lg m-3">
-            </form>   
+            </form>  
+            <a class="btn btn-primary btn-lg m-3" href="{{url_for('new_speaker')}}" >Add Speaker</a> 
         </div>
         
         <div class="col-lg-7 order-lg-1">
@@ -34,12 +35,6 @@
           
           To assist you in getting more out of your staff or your own personal performance, review our speaker listing to select the most appropriate candidate. We also give you the opportunity to supply Speaker feedback. After all, its all about performance.</p>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-5 offset-lg-7 my-auto d-flex justify-content-center">
-            <a class="btn btn-primary btn-lg btn-block m-5" href="{{url_for('new_speaker')}}" >Add Speaker</a>
-        </div>    
       </div>
 
     </div>
