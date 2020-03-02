@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class = "row">
+ <div class = "col-12 my-3">
+    <h2>Please enter the New Category</h2>
+ </div>  
+</div>
+
+<div class="row">
+       
+    <form action="{{url_for('delcategory')}}" method="POST"  class="col">
+        <div class="form-group">
+        {% for cat in categories %}
+            <div class="form-check">  
+                <input type="checkbox" style="margin-right: 1em" name="category" value = "{{cat.category}}" id="category">
+                <label class="form-check-label" for="category"><h5 class="font-weight-normal">{{cat.category}}</h5></label>    
+            </div> 
+        {% endfor %}
+        </div>
+
+    
+        <div class="row">
+            <button class="btn btn-primary" type="submit">Delete  </button>
+        </div>
+
+    </form>
+</div>
+
+
+{% endblock %}

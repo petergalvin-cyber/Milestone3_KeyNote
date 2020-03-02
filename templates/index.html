@@ -8,9 +8,7 @@
             </div>
       </div>
       <div class="row">
-        <!--
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/img/Keynote_address.jpg');"></div>
-        -->
+        
         <div class="col-lg-5 order-lg-2 my-auto d-flex flex-column justify-content-center">
                     
             <form action="{{url_for('findspeaker')}}" method="POST">  
@@ -25,6 +23,8 @@
                 <input type="submit" value="Compile Speaker List" class="btn btn-primary btn-lg m-3">
             </form>  
             <a class="btn btn-primary btn-lg m-3" href="{{url_for('new_speaker')}}" >Add Speaker</a> 
+            <a class="btn btn-primary btn-lg m-3" href="{{url_for('new_category')}}" >Add Category</a>
+            <a class="btn btn-primary btn-lg m-3" href="{{url_for('remove_category')}}" >Delete Category</a>
         </div>
         
         <div class="col-lg-7 order-lg-1">

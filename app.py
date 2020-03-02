@@ -41,10 +41,36 @@ def new_speaker():
     return render_template('newspeaker.html',categories=topics)
 
 
+@app.route('/new_category')
+def new_category():
+    topics = mongo.db.categories.find()
+    return render_template('newcategory.html',categories=topics)
+
+
+@app.route('/addcategory', methods=['POST'])
+def addcategory():
+    mongo.db.categories.insert_one(request.form.to_dict())
+    return redirect(url_for('index'))
+
+
+@app.route('/delcategory', methods=['POST'])
+def delcategory():
+    job = request.form.getlist('category')
+    print(job)
+    mongo.db.categories.remove({'category': {'$in' :request.form.getlist('category')}})
+    return redirect(url_for('index'))
+
+
 @app.route('/add_speaker', methods=['POST'])
 def add_speaker():
     mongo.db.speakers.insert_one(request.form.to_dict())
     return redirect(url_for('index'))
+
+
+@app.route('/remove_category', methods=['POST','GET'])
+def remove_category():
+    topics = mongo.db.categories.find()
+    return render_template('deletecategory.html',categories=topics)
 
 
 @app.route('/deletespeaker/<speaker_id>')
