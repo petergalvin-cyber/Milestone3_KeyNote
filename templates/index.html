@@ -21,10 +21,11 @@
                 {% endfor %}
                      
                 <input type="submit" value="Compile Speaker List" class="btn btn-primary btn-lg m-3">
+                <a href="{{url_for('new_speaker')}}" class="btn btn-info btn-lg m-3">Add Speaker</a> 
+                <a class="btn btn-info btn-lg m-3" href="{{url_for('new_category')}}" >Add Category</a>
+                <a class="btn btn-info btn-lg m-3" href="{{url_for('remove_category')}}" >Delete Category</a>
             </form>  
-            <a class="btn btn-primary btn-lg m-3" href="{{url_for('new_speaker')}}" >Add Speaker</a> 
-            <a class="btn btn-primary btn-lg m-3" href="{{url_for('new_category')}}" >Add Category</a>
-            <a class="btn btn-primary btn-lg m-3" href="{{url_for('remove_category')}}" >Delete Category</a>
+           
         </div>
         
         <div class="col-lg-7 order-lg-1">

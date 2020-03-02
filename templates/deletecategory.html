@@ -2,13 +2,13 @@
 
 <div class = "row">
  <div class = "col-12 my-3">
-    <h2>Please enter the New Category</h2>
+    <h2>Select Categories to Delete</h2>
  </div>  
 </div>
 
 <div class="row">
        
-    <form action="{{url_for('delcategory')}}" method="POST"  class="col">
+    <form onsubmit="return confirm('Are you sure?')" action="{{url_for('delcategory')}}" method="POST" class="col">
         <div class="form-group">
         {% for cat in categories %}
             <div class="form-check">  
@@ -20,7 +20,11 @@
 
     
         <div class="row">
-            <button class="btn btn-primary" type="submit">Delete  </button>
+          <div class="col-lg-2">
+            <button type="input" class="btn btn-danger btn-block btn-lg m-3">Delete Category</button>
+
+            <a  href="{{url_for('index')}}" class="btn btn-info btn-block btn-lg m-3">Home  </a>
+          </div>  
         </div>
 
     </form>

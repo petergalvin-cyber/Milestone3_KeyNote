@@ -53,11 +53,10 @@ def addcategory():
     return redirect(url_for('index'))
 
 
-@app.route('/delcategory', methods=['POST'])
+@app.route('/delcategory', methods=['POST','GET'])
 def delcategory():
-    job = request.form.getlist('category')
-    print(job)
-    mongo.db.categories.remove({'category': {'$in' :request.form.getlist('category')}})
+    print(request.form.getlist('category'))
+    mongo.db.categories.delete_many({'category': {'$in' :request.form.getlist('category')}})
     return redirect(url_for('index'))
 
 
