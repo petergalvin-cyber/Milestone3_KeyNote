@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class = "row">
+ <div class = "col-12 my-3">
+    <h2>Please select Category to amend</h2>
+ </div>  
+</div>
+
+<div class="row">
+        
+      <ul class="list-unstyled">
+        {% for cat in categories %}
+            <li><a href="{{url_for('update_category',category_id=cat._id)}}" class="btn btn-info ml-3 my-1"><strong>{{cat.category}}</strong></a> </li>
+            
+        {% endfor %}
+      </ul>
+
+</div>
+
+
+{% endblock %}

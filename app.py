@@ -72,6 +72,29 @@ def remove_category():
     return render_template('deletecategory.html',categories=topics)
 
 
+
+@app.route('/edit_category')
+def edit_category():
+    topics = mongo.db.categories.find()
+    return render_template('editcategory.html',categories=topics)
+
+
+@app.route('/update_category/<category_id>')
+def update_category(category_id):
+    category_info = mongo.db.categories.find_one({'_id': ObjectId(category_id)})
+    return render_template('amend_cat.html',category=category_info)
+
+
+
+@app.route('/amend_category/<category_id>', methods=['POST'])
+def amend_category(category_id):
+    mongo.db.categories.update(
+        {'_id': ObjectId(category_id)},
+        {'category':request.form.get('category_name')}
+    )
+    return redirect(url_for('index'))
+
+
 @app.route('/deletespeaker/<speaker_id>')
 def deletespeaker(speaker_id):
     mongo.db.speakers.remove({'_id': ObjectId(speaker_id)})

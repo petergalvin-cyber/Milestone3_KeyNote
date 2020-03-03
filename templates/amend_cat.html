@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class = "row">
+ <div class = "col-12 my-3">
+    <h2>Please Update Category</h2>
+ </div>  
+</div>
+
+<div class="row">
+        
+      <form action="{{url_for('amend_category',category_id=category._id)}}" method="POST" class="col-6">
+        <div class="form-check">
+            <label for="category_name">Category Name</label>
+            <input id="category_name" name="category_name" type="text" value="{{category.category}}" class="form-control form-control-lg">
+            <button class="btn btn-primary my-4" type="submit">Amend Category  </button>
+        </div>
+
+      </form>
+
+</div>
+
+
+{% endblock %}
