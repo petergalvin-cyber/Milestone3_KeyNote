@@ -39,9 +39,9 @@
                 {% for elem in categories %}
                 <div class="form-check">  
                     {% if elem.category in speaker.category %}
-                        <input type="checkbox" style="margin-right: 1em" name="category" value = "{{elem.category}}" id="category" checked>
+                        <input type="checkbox" style="margin-right: 1em" name="category" value = "{{elem.category}}" checked>
                     {% else %}
-                        <input type="checkbox" style="margin-right: 1em" name="category" value = "{{elem.category}}" id="category">
+                        <input type="checkbox" style="margin-right: 1em" name="category" value = "{{elem.category}}">
                     {% endif %}
                     <label class="form-check-label" for="category"><p>{{elem.category}}</p></label>    
                 </div> 
@@ -49,16 +49,12 @@
                 
             </div>
 
-        <div class="row">
+        <div class="form-group mt-5">
             <button class="btn btn-primary" type="submit">Update Speaker  </button>
+            <a  href="{{url_for('index')}}" class="btn btn-info ml-4">Home  </a>
         </div>
     </form>
 </div>
 
-<div class="row">
-      <div class="col-lg-4 my-5">
-        <a  href="{{url_for('index')}}" class="btn btn-info btn-lg btn-block">Home  </a>
-      </div>  
-</div>
 
 {% endblock %}

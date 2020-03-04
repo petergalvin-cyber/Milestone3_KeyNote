@@ -4,7 +4,7 @@
     <div class="container-fluid p-0">
       <div class="row">
             <div class="col text-center m-5">
-            <h1>Select Speakers by listed Categories, we welcome feedback on your Speaker experience.</h1>
+            <h1>Find Speakers by listed Categories, Amend and Edit our Speaker Library</h1>
             </div>
       </div>
       <div class="row">
@@ -12,30 +12,31 @@
         <div class="col-lg-5 order-lg-2 my-auto d-flex flex-column justify-content-center">
                     
             <form action="{{url_for('findspeaker')}}" method="POST">  
-                 <h2>Please select your Speaker's specialities</h2>
+                 <h2>Search for Speakers under the following Categories:</h2>
                  {% for elem in categories %}
                 <div class="form-check">  
-                    <input type="checkbox" style="margin-right: 1em" name="category" value = "{{elem.category}}" id="category">
+                    <input type="checkbox" style="margin-right: 1em" name="category" value = "{{elem.category}}">
                     <label class="form-check-label" for="category"><h5 class="font-weight-normal">{{elem.category}}</h5></label>    
                 </div> 
                 {% endfor %}
-                     
-                <input type="submit" value="Compile Speaker List" class="btn btn-primary btn-lg m-3">
-                <a href="{{url_for('new_speaker')}}" class="btn btn-info btn-lg m-3">Add Speaker</a> 
-                <a class="btn btn-info btn-lg m-3" href="{{url_for('new_category')}}" >Add Category</a>
-                <a class="btn btn-info btn-lg m-3" href="{{url_for('remove_category')}}" >Delete Category</a>
-                <a class="btn btn-info btn-lg m-3" href="{{url_for('edit_category')}}" >Edit Category</a>
+                <div class="form-check mt-3">     
+                    <input type="submit" value="Compile Speaker List" class="btn btn-primary btn-lg mr-3 mb-2">
+                    <a href="{{url_for('new_speaker')}}" class="btn btn-info btn-lg mr-3 mb-2">Add Speaker</a> 
+                    <a class="btn btn-info btn-lg mr-3 mb-2" href="{{url_for('new_category')}}" >Add Category</a>
+                    <a class="btn btn-info btn-lg mr-3 mb-2" href="{{url_for('remove_category')}}" >Delete Category</a>
+                    <a class="btn btn-info btn-lg mr-3 mb-2" href="{{url_for('edit_category')}}" >Edit Category</a>
+                </div>
             </form>  
            
         </div>
         
         <div class="col-lg-7 order-lg-1">
           <h2 class="mb-3">Why use a KeyNote Speaker?</h2>
-          <p class="lead mb-0">Get the best out your workforce with one of our leadership and peak performance speakers. Experts in their field, our leadership speakers have enjoyed success in their fields and are renowned for providing engaging and insightful talks on the subjects of leadership and peak performance. Leadership speakers focus on how to evolve and grow from being a boss into the leader. Running a business is about more than sheer passion and determination. <br>
+          <p class="lead mb-0">Get the best out your workforce with one of our leadership and peak performance speakers. Our leadership speakers have enjoyed success in their fields and are renowned for providing engaging and insightful talks on the subjects of leadership and peak performance. Leadership speakers focus on how to evolve and grow from being a boss into the leader. Running a business is about more than sheer passion and determination. <br>
           
           Through the topics that are covered, any audience will walk away with a new perspective on what it means to lead. Within this comes the subject of peak performance; a topic which can cover many different walks of life. From business to exploration and sport, we have peak performance speakers who have incredible stories to tell about how they maintained performance and the results that came from doing so. <br>
           
-          To assist you in getting more out of your staff or your own personal performance, review our speaker listing to select the most appropriate candidate. We also give you the opportunity to supply Speaker feedback. After all, its all about performance.</p>
+          To assist you in getting more out of your staff or your own personal performance, review our speaker listing to select the most appropriate candidate. Make alterations to the speaker Library to ensure the most recent and accurate information is available to the community.</p>
         </div>
       </div>
 
@@ -51,7 +52,7 @@
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="../static/img/testimonials-1.jpg" alt="">
             <h5>Margaret E.</h5>
-            <p class="font-weight-light mb-0">"When Arnie came out and said "I'll be back", the place erupted. I was bored with his speech though"</p>
+            <p class="font-weight-light mb-0">"When Arnie came out and said "I am back!", the place erupted. Disappointed he would not pose for Photos."</p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -65,7 +66,7 @@
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="../static/img/testimonials-3.jpg" alt="">
             <h5>Sarah W.</h5>
-            <p class="font-weight-light mb-0">"The seminar on branding was sensational, carbon emissions can be increased if we brand it correctly!"</p>
+            <p class="font-weight-light mb-0">"The seminar on branding was sensational, cigarettes can be made cool again!"</p>
           </div>
         </div>
       </div>

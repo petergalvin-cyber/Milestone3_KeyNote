@@ -15,7 +15,6 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     topics = mongo.db.categories.find()
-    #print(topics.count())
     return render_template("index.html", categories=topics)
 
 
@@ -38,7 +37,7 @@ def speakerbio(speaker_id):
 @app.route('/new_speaker')
 def new_speaker():
     topics = mongo.db.categories.find()
-    return render_template('newspeaker.html',categories=topics)
+    return render_template('newspeaker.html', categories=topics)
 
 
 @app.route('/new_category')
@@ -55,14 +54,21 @@ def addcategory():
 
 @app.route('/delcategory', methods=['POST','GET'])
 def delcategory():
-    print(request.form.getlist('category'))
+    
     mongo.db.categories.delete_many({'category': {'$in' :request.form.getlist('category')}})
     return redirect(url_for('index'))
 
 
 @app.route('/add_speaker', methods=['POST'])
 def add_speaker():
-    mongo.db.speakers.insert_one(request.form.to_dict())
+    
+    mongo.db.speakers.insert({
+        'name': request.form.get('name'),
+        'category': request.form.getlist('category'),
+        'bio': request.form.get('bio'),
+        'banner': request.form.get('banner'),
+        'photo': request.form.get('photo')
+    })
     return redirect(url_for('index'))
 
 
@@ -108,9 +114,9 @@ def editspeaker(speaker_id):
     return render_template('editspeaker.html', speaker=speaker_info, categories=topics)
 
 
-@app.route('/updatespeaker/<speaker_id>')
+@app.route('/updatespeaker/<speaker_id>', methods=['POST', 'GET'])
 def updatespeaker(speaker_id):
-    mongo.db.speakers.update({'_id': ObjectId(speaker_id)},
+    mongo.db.speakers.replace_one({'_id': ObjectId(speaker_id)},
     {
         'name': request.form.get('name'),
         'category': request.form.getlist('category'),

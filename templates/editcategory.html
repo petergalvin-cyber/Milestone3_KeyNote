@@ -10,9 +10,10 @@
         
       <ul class="list-unstyled">
         {% for cat in categories %}
-            <li><a href="{{url_for('update_category',category_id=cat._id)}}" class="btn btn-info ml-3 my-1"><strong>{{cat.category}}</strong></a> </li>
+            <li><a href="{{url_for('update_category',category_id=cat._id)}}" class="btn btn-light ml-3">{{cat.category}}</a> </li>
             
         {% endfor %}
+            <a  href="{{url_for('index')}}" class="btn btn-info mt-4 ml-4" type="submit">Home  </a>
       </ul>
 
 </div>

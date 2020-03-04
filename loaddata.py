@@ -127,21 +127,23 @@ def index():
     #mongo.db.categories.delete_many({})
     #mongo.db.categories.insert_one(cats)   
 
-    while index < len(description):
+    #while index < len(description):
         #mongo.db.speakers.insert_one({"bio":description[index]})
-        mongo.db.speakers.replace_one({"name": name[index]},
-                                      {"bio": description[index],
-                                      "name": name[index],
-                                      "banner":title[index],
-                                      "photo": photo[index],
-                                      "category": category[index]})
-        index += 1 
+
+    mongo.db.speakers.insert({"name": name[0]},
+                            {"bio": description[0],
+                            "name": name[0],
+                            "banner":title[0],
+                            "photo": photo[0],
+                            "category": category[0]}
+                            )
+        #index += 1 
 
         #{"$set": {"item": "Arnold Schwarzenegger was California's 38th Govern"}}
         #for element in results:
             #count += 1
             #print(element.get("item"))
-    return render_template('dud.html', planner=description)
+    #return render_template('dud.html', planner=description)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
