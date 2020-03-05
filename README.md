@@ -1,6 +1,6 @@
 
 # Milestone 3 : Orator Library 
-This application creates a site that promotes and sells high profile Keynote speakers for various corporate events. The application reads, updates, creates and deletes Keynote speaker information that is populated in a MongoDB database. The high profile orators will entice the user and encourage them to reserve an speaker. 
+This application creates a site that promotes and sells high profile Keynote speakers for various corporate events. The application reads, updates, creates and deletes Keynote speaker information that is populated in a MongoDB database. The high profile orators will entice the user and encourage them to reserve a speaker. 
 
 The user can search for Keynote speakers under the following categories:
 1. Business & Management
@@ -16,7 +16,7 @@ The above categories can be updated and deleted. Additional catgegories can also
 
 
 # UX
-The site promtes KeyNote speakers profiles and encourages them to be booked by companies in order to inspire their employees to excel. The KeyNote speakers are high profile Business people, Artists and Celebrities. The level of excitement surrounding these individuals aims to attract bookings for corporate events and generate profit for the site.
+The site promtes KeyNote speakers to companies that book them to give inspirational speeches to their employees. The KeyNote speakers are high profile Business people, Artists and Celebrities. The level of excitement surrounding these individuals aims to attract bookings for corporate events and generate profit for the site.
 
 The user should get easy access to information about their selected speakers and have it presented in an attractive manner to generate a booking.
 
@@ -47,6 +47,9 @@ The data for the project sits in MongoDB cluster 'Cluster-Peter'; database 'Spea
 
 Validation in the Speaker creation form ensures that no empty Speaker profiles can be created. When deleting any information the user is asked to confirm before proceeding.
 
+## Features to Develop
+Future versions would restrict permission to create, update and delete speaker information to admin users. 
+
 ## Technologies
 1. HTML
 2. CSS
@@ -70,30 +73,29 @@ This application's backend contained the most complexity consisting of database 
 
   * [Data Entry : Display Speaker Info under "Leadership & Motivation" category](testing/B_Test1_Read_Speaker.png)
   * [Test Results : Display Speaker Info under "Leadership & Motivation" category](testing/B_Test1_Read_Speaker_Result.png)
-  * [Data Entry : Create Speaker under "Leadership & Motivation" category](testing/B_Test1_Create_Speaker.png)
-  * [Test Results : Create Speaker under "Leadership & Motivation" category](testing/B_Test1_Create_Speaker_Result.png)
-  * [Data Entry : Update Speaker under "Leadership & Motivation" category](testing/B_Test1_Update_Speaker.png)
-  * [Test Results : Update Speaker under "Leadership & Motivation" category](testing/B_Test1_Update_Speaker_Result.png)
-  * [Data Entry : Delete Speaker under "Leadership & Motivation" category](testing/B_Test1_Delete_Speaker.png)
-  * [Test Results : Delete Speaker under "Leadership & Motivation" category](testing/B_Test1_Delete_Speaker_Result.png)
+  * [Data Entry : Create Speaker under "Leadership & Motivation" category](testing/B_Test2_Create_Speaker.png)
+  * [Test Results : Create Speaker under "Leadership & Motivation" category](testing/B_Test2_Create_Speaker_Result.png)
+  * [Data Entry : Update Speaker under "Leadership & Motivation" category](testing/B_Test3_Update_Speaker.png)
+  * [Test Results : Update Speaker under "Leadership & Motivation" category](testing/B_Test3_Update_Speaker_Result.png)
+  * [Data Entry : Delete Speaker under "Leadership & Motivation" category](testing/B_Test4_Delete_Speaker.png)
+  * [Test Results : Delete Speaker under "Leadership & Motivation" category](testing/B_Test4_Delete_Speaker_Result.png)
 
 Manaul tests were performed in the front end to ensure the application was responsive for all devices and is compatible with Chrome, Safari, Firefox and Edge but not with IE 10 or less. Tests were performed on the Speaker creation form to verify form validations operate effectively.
 
 
 ## Deployment
 ### Github
-#### Github repository - 
+#### Github repository -  https://petergalvin-cyber.github.io/Milestone3_KeyNote/
 
 To run locally you can download direct from GitHub as follows:
-1. Find the underlying link behind the green "Clone or download" button. 
-1. In your local workspace enter wget link obtained in 1. 
-2. Unzip the zip file.
-3. In mongoDB database create a database called project with two collections category and speakers the specifics of the collections can be found in the database schema. 
+1. Select "Download ZIP" file on clicking the green "Clone or download" button.  
+2. Unzip the zip file in your workspace directory.
+3. In mongoDB database create a database called project with two collections: category and speakers the specifics of the collections can be found in the data schema described below. 
 5. Run the application entering python3 app.py in the command line.
 
 ### Heroku
 
-#### Heroku Deployment - xxxxxx
+#### Heroku Deployment - https://milestone3-orator.herokuapp.com/
 
 
 # Credits
