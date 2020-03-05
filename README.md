@@ -80,7 +80,7 @@ This application's backend contained the most complexity consisting of database 
   * [Data Entry : Delete Speaker under "Leadership & Motivation" category](testing/B_Test4_Delete_Speaker.png)
   * [Test Results : Delete Speaker under "Leadership & Motivation" category](testing/B_Test4_Delete_Speaker_Result.png)
 
-Manaul tests were performed in the front end to ensure the application was responsive for all devices and is compatible with Chrome, Safari, Firefox and Edge but not with IE 10 or less. Tests were performed on the Speaker creation form to verify form validations operate effectively.
+Manual tests were performed in the front end to ensure the application was responsive for all devices and is compatible with Chrome, Safari, Firefox and Edge but not with IE 10 or less. Tests were performed on the Speaker creation form to verify form validations operate effectively.
 
 
 ## Deployment
