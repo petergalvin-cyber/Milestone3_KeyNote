@@ -63,10 +63,10 @@ This application's backend contained the most complexity consisting of database 
 
 1. Speaker Category: Test the **C**reate, **R**ead, **U**pdate and **D**elete functions operate.
 
-  * [Display Categories - Read](testing/A_Test1_Read_Category_list.png)
-  * [Create Category - "Farming"](testing/A_Test2_Create_Category_list.png)
-  * [Update Category - "Farming & Stuff"](testing/A_Test3_Amend_Category_list.png)
-  * [Delete Category - "Farming & Stuff"](testing/A_Test4_Delete_Category_list.png)
+  * [Display Categories - Read](testing/A_Test1_Read_Category.png)
+  * [Create Category - "Farming"](testing/A_Test2_Create_Category.png)
+  * [Update Category - "Farming & Stuff"](testing/A_Test3_Amend_Category.png)
+  * [Delete Category - "Farming & Stuff"](testing/A_Test4_Delete_Category.png)
 
 
 2. Speaker Information: Test the **C**reate, **R**ead, **U**pdate and **D**elete functions operate.
