@@ -90,7 +90,7 @@ Manual tests were performed in the front end to ensure the application was respo
 To run locally you can download direct from GitHub as follows:
 1. Select "Download ZIP" file on clicking the green "Clone or download" button.  
 2. Unzip the zip file in your workspace directory.
-3. In mongoDB database create a database called project with two collections: category and speakers the specifics of the collections can be found in the data schema described below. 
+3. In mongoDB create a database called 'SpeakerHub' with two collections: 'category' and 'speakers' the specifics of the collections can be found in the data schema described below. 
 5. Run the application entering python3 app.py in the command line.
 
 ### Heroku
